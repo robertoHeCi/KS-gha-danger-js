@@ -1,2 +1,3 @@
 import { checkPRAssigned } from './src/utils/dangerJs'
-checkPRAssigned()
+import { danger, fail } from 'danger'
+checkPRAssigned(danger, fail)
