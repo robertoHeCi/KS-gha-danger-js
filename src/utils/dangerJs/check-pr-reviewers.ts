@@ -1,6 +1,6 @@
-import { danger, fail } from 'danger'
+import { fail, danger } from 'danger'
 
-export const checkPRAssigned = () => {
+const checkPRAssigned = () => {
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody')
   }
@@ -27,3 +27,9 @@ export const checkPRAssigned = () => {
 //     warn(`There are no changes in test files. Pattern used: ${testFilePattern}`)
 //   }
 // }
+
+module.exports = {
+  checkPRAssigned
+  // checkChangedFiles,
+  // checkUpdatedTests
+}
