@@ -1,2 +1,2 @@
-const checkPRAssigned = require('./src/utils/dangerJs')
+const { checkPRAssigned } = require('./src/utils/dangerJs')
 checkPRAssigned()
