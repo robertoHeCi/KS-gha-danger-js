@@ -31,7 +31,8 @@
   },
   "include": [
     "src/**/*",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "dangerfile.ts"
   ],
   "exclude": [
     "node_modules",
