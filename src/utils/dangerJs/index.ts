@@ -1,9 +1,11 @@
-export function checkPRAssigned (danger:any, fail:(message: string) => void) {
-  if (danger.github.pr.assignees.length === 0) {
-    fail('PR must be assigned to somebody')
+
+export default {
+  checkPRAssigned: (danger:any, fail:(message: string) => void) => {
+    if (danger.github.pr.assignees.length === 0) {
+      fail('PR must be assigned to somebody')
+    }
   }
 }
-
 // const checkChangedFiles = (limit = 10) => {
 //   const addedFilesAmount = danger.git.created_files.length
 //   const changedFilesAmount = danger.git.modified_files.length

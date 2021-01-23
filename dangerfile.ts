@@ -1,3 +1,3 @@
-import { checkPRAssigned } from './src/utils/dangerJs'
 import { danger, fail } from 'danger'
-checkPRAssigned(danger, fail)
+const dangerFunctions = require('./src/utils/dangerJs')
+dangerFunctions.checkPRAssigned(danger, fail)
