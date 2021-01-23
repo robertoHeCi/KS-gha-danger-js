@@ -8,8 +8,6 @@
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v2
-       - name: Typescript compiler
-         uses: iCrawl/action-tsc@v1
        - name: Danger
          run: npx danger ci
          env:

@@ -1,4 +1,6 @@
-export const checkPRAssigned = (danger:any, fail:(message: string) => void) => {
+import { danger, fail } from 'danger'
+
+export default async () => {
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody')
   }
