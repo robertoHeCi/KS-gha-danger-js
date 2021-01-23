@@ -1,2 +1,2 @@
-import checkPRAssigned from './src/utils/dangerJs'
-await checkPRAssigned()
+import { checkPRAssigned } from './src/utils/dangerJs'
+checkPRAssigned()

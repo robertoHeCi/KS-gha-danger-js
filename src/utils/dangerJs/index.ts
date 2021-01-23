@@ -1,6 +1,6 @@
 import { danger, fail } from 'danger'
 
-export default async () => {
+export const checkPRAssigned = () => {
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody')
   }
