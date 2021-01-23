@@ -1,3 +1,2 @@
-import { checkPRAssigned } from './src/utils/dangerJs/check-pr-reviewers'
-
+const checkPRAssigned = require('./src/utils/dangerJs')
 checkPRAssigned()
