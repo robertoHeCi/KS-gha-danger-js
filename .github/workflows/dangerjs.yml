@@ -15,7 +15,6 @@
        - uses: actions/checkout@v2
 
        - name: Danger # Runs the danger JS command
-         uses: danger/danger-js@9.1.8
-
+       uses: danger/danger-js@9.1.8
        env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
