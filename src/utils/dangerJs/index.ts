@@ -1,4 +1,4 @@
-export const checkPRAssigned = (danger:any, fail:(message: string) => void) => {
+const checkPRAssigned = (danger:any, fail:(message: string) => void) => {
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody')
   }
@@ -25,3 +25,7 @@ export const checkPRAssigned = (danger:any, fail:(message: string) => void) => {
 //     warn(`There are no changes in test files. Pattern used: ${testFilePattern}`)
 //   }
 // }
+
+export {
+  checkPRAssigned
+}
