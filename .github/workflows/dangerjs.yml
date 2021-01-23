@@ -2,14 +2,10 @@
  on: # Controls when the action will run.
    pull_request: # Triggers the workflow onpull request events but only for the main branch
      branches: [ main ]
-
    workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
-
  jobs: # A workflow run is made up of one or more jobs that can run sequentially or in parallel
    build: # This workflow contains a single job called "build"
-
      runs-on: ubuntu-latest # The type of runner that the job will run on
-
      steps: # Steps represent a sequence of tasks that will be executed as part of the job
        - name: Checkout repo
        - uses: actions/checkout@v2
