@@ -1,0 +1,10 @@
+node_modules
+coverage
+.idea
+storybook-static
+build/*
+dist/*
+_templates/
+src/routes.ts
+serviceWorker.ts
+e2e
