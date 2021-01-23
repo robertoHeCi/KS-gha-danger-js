@@ -1,8 +1,3 @@
-// import { checkPRAssigned } from './src/utils/dangerJs'
-// checkPRAssigned()
-
+import { checkPRAssigned } from './src/utils/dangerJs'
 import { danger, fail } from 'danger'
-
-if (danger.github.pr.assignees.length === 0) {
-  fail('PR must be assigned to somebody')
-}
+checkPRAssigned(danger, fail)
