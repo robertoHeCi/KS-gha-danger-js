@@ -9,6 +9,6 @@
      steps:
        - uses: actions/checkout@v2
        - name: Danger
-         uses: danger/danger-js@9.1.8
+         run: npx danger ci
          env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
