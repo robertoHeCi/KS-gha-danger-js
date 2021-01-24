@@ -6,19 +6,20 @@ const dm = danger as any
 describe('Danger JS tests', () => {
   beforeEach(() => {
     dm.fail = jest.fn()
+    dm.warn = jest.fn()
   })
 
   it('fails if there are more changed files than 1', () => {
     dm.danger = { git: { created_files: ['example.ts'], modified_files: ['example.ts'], deleted_files: ['example.ts'] } }
-    return checkChangedFiles(dm.danger, dm.fail, 1).then(() => {
-      expect(dm.fail).toHaveBeenCalled()
+    return checkChangedFiles(dm.danger, dm.warn, 1).then(() => {
+      expect(dm.warn).toHaveBeenCalled()
     })
   })
 
   it('Should not fails if there are less changed files than 4', () => {
     dm.danger = { git: { created_files: ['example.ts'], modified_files: ['example.ts'], deleted_files: ['example.ts'] } }
-    return checkChangedFiles(dm.danger, dm.fail, 4).then(() => {
-      expect(dm.fail).not.toHaveBeenCalled()
+    return checkChangedFiles(dm.danger, dm.warn, 4).then(() => {
+      expect(dm.warn).not.toHaveBeenCalled()
     })
   })
 
