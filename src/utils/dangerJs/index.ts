@@ -1,5 +1,6 @@
-import { DangerDSLType } from 'danger'
-export const checkPRAssigned = (danger:DangerDSLType, fail:any) => {
+import { danger, fail } from 'danger'
+
+export const checkPRAssigned = () => {
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody 🙏')
   }
