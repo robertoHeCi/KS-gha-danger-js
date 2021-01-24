@@ -1,4 +1,4 @@
-import { danger, fail } from 'danger'
+const { danger, fail } = require('danger')
 
 export const checkPRAssigned = () => {
   if (danger.github.pr.assignees.length === 0) {
