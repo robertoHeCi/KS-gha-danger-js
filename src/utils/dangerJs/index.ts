@@ -2,13 +2,13 @@ import { DangerDSLType } from 'danger'
 
 type LogFunction = (message:string) => void
 
-export const checkPRAssigned = (danger:DangerDSLType, fail:LogFunction) => {
+export const checkPRAssigned = async (danger:DangerDSLType, fail:LogFunction) => {
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody 🙏')
   }
 }
 
-export const checkChangedFiles = (danger:DangerDSLType, warn:LogFunction, limit = 10) => {
+export const checkChangedFiles = async (danger:DangerDSLType, warn:LogFunction, limit = 10) => {
   const addedFilesAmount = danger.git.created_files.length
   const changedFilesAmount = danger.git.modified_files.length
   const deletedFilesAmount = danger.git.deleted_files.length
