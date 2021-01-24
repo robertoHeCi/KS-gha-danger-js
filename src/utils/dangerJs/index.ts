@@ -1,6 +1,5 @@
-const { danger, fail } = require('danger')
-
-export const checkPRAssigned = () => {
+import { DangerDSLType } from 'danger'
+export const checkPRAssigned = (danger:DangerDSLType, fail:(message:string) => void) => {
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody 🙏')
   }
