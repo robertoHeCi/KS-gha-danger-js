@@ -15,6 +15,13 @@ describe('Danger JS tests', () => {
     })
   })
 
+  it('Should not fails if there are less changed files than 4', () => {
+    dm.danger = { git: { created_files: ['example.ts'], modified_files: ['example.ts'], deleted_files: ['example.ts'] } }
+    return checkChangedFiles(dm.danger, dm.fail, 4).then(() => {
+      expect(dm.fail).not.toHaveBeenCalled()
+    })
+  })
+
   it('fails if there are no asignees on the PR', () => {
     dm.danger = { github: { pr: { assignees: [] } } }
     return checkPRAssigned(dm.danger, dm.fail).then(() => {
