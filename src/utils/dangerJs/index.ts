@@ -4,7 +4,7 @@ type LogFunction = (message:string) => void
 
 export const checkPRAssigned = async (danger:DangerDSLType, fail:LogFunction) => {
   if (danger.github.pr.assignees.length === 0) {
-    fail('PR must be assigned to somebody 🙏')
+    fail('PR must be assigned to somebody!! 🙏')
   }
 }
 
@@ -14,7 +14,7 @@ export const checkChangedFiles = async (danger:DangerDSLType, warn:LogFunction, 
   const deletedFilesAmount = danger.git.deleted_files.length
   const filesChanged = addedFilesAmount + changedFilesAmount + deletedFilesAmount
   if (filesChanged > limit) {
-    warn(`Files changed in this PR are ${filesChanged}. Limit is ${limit}`)
+    warn(`Files changed in this PR are ${filesChanged}!!. Limit is ${limit}`)
   }
 }
 //
