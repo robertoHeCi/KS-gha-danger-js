@@ -7,11 +7,9 @@
      runs-on: ubuntu-latest
      steps:
      - uses: actions/checkout@v2
-     - name: Use Node.js ${{ matrix.node-version }}
-       uses: actions/setup-node@v1
+     - uses: borales/actions-yarn@v2.0.0
        with:
-         node-version: ${{ matrix.node-version }}
-     - run: npm ci
+         cmd: install # will run `yarn install` command
      - name: Danger
        run: npx danger-ts
        env:
