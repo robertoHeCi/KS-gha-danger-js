@@ -1,7 +1,4 @@
 import { checkPRAssigned, checkChangedFiles } from './src/utils/dangerJs'
-import { danger, fail, warn, schedule } from 'danger'
-import noConsole from 'danger-plugin-no-console'
-// @ts-ignore
-schedule(noConsole())
+import { danger, fail, warn } from 'danger'
 checkPRAssigned(danger, fail)
 checkChangedFiles(danger, warn, 1)
