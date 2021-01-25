@@ -6,8 +6,6 @@ export const checkPRAssigned = async (danger:DangerDSLType, fail:LogFunction) =>
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody!! 🙏')
   }
-  fail(JSON.stringify(danger.github))
-  fail(JSON.stringify(danger.git))
 }
 
 export const checkChangedFiles = async (danger:DangerDSLType, warn:LogFunction, limit = 10) => {
