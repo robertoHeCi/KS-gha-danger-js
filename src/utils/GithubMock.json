@@ -30,11 +30,15 @@
       "type": "string",
       "site_admin": false
     },
-    "labels": ["string"],
+    "labels": [
+      "string"
+    ],
     "state": "string",
     "locked": false,
     "assignee": null,
-    "assignees": ["string"],
+    "assignees": [
+      "string"
+    ],
     "milestone": null,
     "comments": 0,
     "created_at": "string",
@@ -91,10 +95,18 @@
     "merged_at": null,
     "merge_commit_sha": "string",
     "assignee": null,
-    "assignees": ["string"],
-    "requested_reviewers": ["string"],
-    "requested_teams": ["string"],
-    "labels": ["string"],
+    "assignees": [
+      "string"
+    ],
+    "requested_reviewers": [
+      "string"
+    ],
+    "requested_teams": [
+      "string"
+    ],
+    "labels": [
+      "string"
+    ],
     "milestone": null,
     "draft": false,
     "commits_url": "string",
@@ -462,10 +474,16 @@
       ]
     }
   ],
-  "reviews": ["string"],
+  "reviews": [
+    "string"
+  ],
   "requested_reviewers": {
-    "users": ["string"],
-    "teams": ["string"]
+    "users": [
+      "string"
+    ],
+    "teams": [
+      "string"
+    ]
   },
   "thisPR": {
     "0": 0,
@@ -497,7 +515,7 @@
     "reactions": {},
     "repos": {},
     "search": {},
-    "teams": {},
+      "teams": {},
     "users": {}
   },
   "utils": {}
