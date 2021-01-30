@@ -14,7 +14,7 @@ export const checkChangedFiles = async (danger:DangerDSLType, warn:LogFunction, 
   const deletedFilesAmount = danger.git.deleted_files.length
   const filesChanged = addedFilesAmount + changedFilesAmount + deletedFilesAmount
   if (filesChanged > limit) {
-    warn(`Files changed in this PR are ${filesChanged}!!. Limit is ${limit}`)
+    warn(`Files changed in this PR are ${filesChanged}!!. Limit is ${limit} ;)`)
   }
 }
 //
