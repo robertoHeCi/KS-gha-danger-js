@@ -1,5 +1,5 @@
 import * as danger from 'danger'
-import { checkChangedFiles, checkPRAssigned } from './index'
+import { checkChangedFiles, checkPRAssigned, checkTicketLinkInPrBoby } from './index'
 jest.mock('danger', () => jest.fn())
 const dm = danger as any
 
@@ -33,6 +33,20 @@ describe('Danger JS tests', () => {
   it('Not fails there are no asignees on the PR', () => {
     dm.danger = { github: { pr: { assignees: ['Example'] } } }
     return checkPRAssigned(dm.danger, dm.fail).then(() => {
+      expect(dm.fail).not.toHaveBeenCalled()
+    })
+  })
+
+  it('Should return a fail because the PR body does not contains the issue link', () => {
+    dm.danger = { github: { pr: { body: '' } } }
+    return checkTicketLinkInPrBoby(dm.danger, dm.fail).then(() => {
+      expect(dm.fail).toHaveBeenCalled()
+    })
+  })
+
+  it('Should not fail because the PR body contains the issue link', () => {
+    dm.danger = { github: { pr: { body: '[AB#12234]()' } } }
+    return checkTicketLinkInPrBoby(dm.danger, dm.fail).then(() => {
       expect(dm.fail).not.toHaveBeenCalled()
     })
   })
