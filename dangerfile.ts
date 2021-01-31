@@ -1,7 +1,8 @@
 import { checkPRReviewers, checkNewDependencies, checkChangedFiles, checkTicketLinkInPrBoby } from './src/utils/dangerJs'
-import { danger, fail, warn } from 'danger'
+// import { danger, fail, warn } from 'danger'
+import * as danger from 'danger'
 // @ts-ignore
-checkPRReviewers(danger, fail)
-checkNewDependencies(danger, warn)
-checkChangedFiles(danger, warn, 1)
-checkTicketLinkInPrBoby(danger, fail)
+checkPRReviewers(danger)
+checkNewDependencies(danger)
+checkChangedFiles(danger, 1)
+checkTicketLinkInPrBoby(danger)
