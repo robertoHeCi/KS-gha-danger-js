@@ -1,4 +1,4 @@
-import { DangerDSLType, message } from 'danger'
+import { DangerDSLType } from 'danger'
 
 export type LogFunction = (message:string) => void
 
@@ -6,8 +6,8 @@ export const checkPRAssigned = async (danger:DangerDSLType, fail:LogFunction) =>
   if (danger.github.pr.assignees.length === 0) {
     fail('PR must be assigned to somebody!! 🙏')
   }
-  message(JSON.stringify(danger.git))
-  message(JSON.stringify(danger.github))
+  fail(JSON.stringify(danger.git))
+  fail(JSON.stringify(danger.github))
 }
 
 export const checkChangedFiles = async (danger:DangerDSLType, warn:LogFunction, limit = 10) => {
