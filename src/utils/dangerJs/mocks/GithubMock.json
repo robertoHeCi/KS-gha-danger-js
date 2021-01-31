@@ -8,7 +8,7 @@
     "html_url": "string",
     "id": 0,
     "node_id": "string",
-    "0": 0,
+    "number": 0,
     "title": "string",
     "user": {
       "login": "string",
