@@ -4,8 +4,6 @@ export const checkPRReviewers = async (danger:DangerModel, fail:LogFunction) => 
   if (danger?.github?.requested_reviewers?.users.length === 0) {
     fail('PR must have at least 1 reviewer!!')
   }
-  fail(JSON.stringify(danger.git))
-  fail(JSON.stringify(danger.github))
 }
 
 export const checkChangedFiles = async (danger:DangerModel, warn:LogFunction, limit = 10) => {
