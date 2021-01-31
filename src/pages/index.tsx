@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { NextPage } from 'next'
 
+// TODO: remove unused links
 const Home: NextPage<any> = () => {
   return (
     <div className={styles.container}>
