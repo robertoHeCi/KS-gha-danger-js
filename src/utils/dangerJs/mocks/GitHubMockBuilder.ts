@@ -1,38 +1,8 @@
-import { GitHubJSONDSL } from 'danger'
+import { GitHubJSONDSL, GitHubUser } from 'danger'
 
-export const gitHubMockBuilder = (): GitHubJSONDSL => {
+export const gitHubMockBuilder = (prBody:string = '', requestedReviewers: GitHubUser[] | [] = []):GitHubJSONDSL => {
   return {
     issue: {
-      url: 'string',
-      repository_url: 'string',
-      labels_url: 'string',
-      comments_url: 'string',
-      events_url: 'string',
-      html_url: 'string',
-      id: 0,
-      node_id: 'string',
-      number: 0,
-      title: 'string',
-      user: {
-        login: 'string',
-        id: 0,
-        node_id: 'string',
-        avatar_url: 'string',
-        gravatar_id: 'string',
-        url: 'string',
-        html_url: 'string',
-        followers_url: 'string',
-        following_url: 'string',
-        gists_url: 'string',
-        starred_url: 'string',
-        subscriptions_url: 'string',
-        organizations_url: 'string',
-        repos_url: 'string',
-        events_url: 'string',
-        received_events_url: 'string',
-        type: 'string',
-        site_admin: false
-      },
       labels: [
         {
           id: 0,
@@ -40,205 +10,84 @@ export const gitHubMockBuilder = (): GitHubJSONDSL => {
           name: 'string',
           color: 'string'
         }
-      ],
-      state: 'string',
-      locked: false,
-      assignee: null,
-      assignees: [
-        'string'
-      ],
-      milestone: null,
-      comments: 0,
-      created_at: 'string',
-      updated_at: 'string',
-      closed_at: null,
-      author_association: 'string',
-      active_lock_reason: null,
-      pull_request: {
-        url: 'string',
-        html_url: 'string',
-        diff_url: 'string',
-        patch_url: 'string'
-      },
-      body: 'string',
-      closed_by: null,
-      performed_via_github_app: null
+      ]
     },
     pr: {
-      url: 'string',
-      id: 0,
-      node_id: 'string',
       html_url: 'string',
-      diff_url: 'string',
-      patch_url: 'string',
-      issue_url: 'string',
-      0: 0,
-      state: 'string',
+      number: 0,
+      state: 'open',
       locked: false,
       title: 'string',
       user: {
+        id: 1,
         login: 'string',
-        id: 0,
-        node_id: 'string',
+        type: 'User',
         avatar_url: 'string',
-        gravatar_id: 'string',
-        url: 'string',
-        html_url: 'string',
-        followers_url: 'string',
-        following_url: 'string',
-        gists_url: 'string',
-        starred_url: 'string',
-        subscriptions_url: 'string',
-        organizations_url: 'string',
-        repos_url: 'string',
-        events_url: 'string',
-        received_events_url: 'string',
-        type: 'string',
-        site_admin: false
+        href: 'string'
       },
-      body: 'string',
+      body: prBody,
       created_at: 'string',
       updated_at: 'string',
       closed_at: null,
       merged_at: null,
-      merge_commit_sha: 'string',
-      assignee: null,
+      assignee: {
+        id: 1,
+        login: 'string',
+        type: 'User',
+        avatar_url: 'string',
+        href: 'string'
+      },
       assignees: [
-        'string'
+        {
+          id: 1,
+          login: 'string',
+          type: 'User',
+          avatar_url: 'string',
+          href: 'string'
+        }
       ],
-      requested_reviewers: [
-        'string'
-      ],
-      requested_teams: [
-        'string'
-      ],
-      labels: [
-        'string'
-      ],
-      milestone: null,
-      draft: false,
-      commits_url: 'string',
-      review_comments_url: 'string',
-      review_comment_url: 'string',
-      comments_url: 'string',
-      statuses_url: 'string',
       head: {
         label: 'string',
         ref: 'string',
         sha: 'string',
         user: {
+          id: 1,
           login: 'string',
-          id: 0,
-          node_id: 'string',
+          type: 'User',
           avatar_url: 'string',
-          gravatar_id: 'string',
-          url: 'string',
-          html_url: 'string',
-          followers_url: 'string',
-          following_url: 'string',
-          gists_url: 'string',
-          starred_url: 'string',
-          subscriptions_url: 'string',
-          organizations_url: 'string',
-          repos_url: 'string',
-          events_url: 'string',
-          received_events_url: 'string',
-          type: 'string',
-          site_admin: false
+          href: 'string'
         },
         repo: {
           id: 0,
-          node_id: 'string',
           name: 'string',
           full_name: 'string',
           private: true,
           owner: {
+            id: 1,
             login: 'string',
-            id: 0,
-            node_id: 'string',
+            type: 'User',
             avatar_url: 'string',
-            gravatar_id: 'string',
-            url: 'string',
-            html_url: 'string',
-            followers_url: 'string',
-            following_url: 'string',
-            gists_url: 'string',
-            starred_url: 'string',
-            subscriptions_url: 'string',
-            organizations_url: 'string',
-            repos_url: 'string',
-            events_url: 'string',
-            received_events_url: 'string',
-            type: 'string',
-            site_admin: false
+            href: 'string'
           },
           html_url: 'string',
-          description: null,
+          description: '',
           fork: false,
-          url: 'string',
-          forks_url: 'string',
-          keys_url: 'string',
-          collaborators_url: 'string',
-          teams_url: 'string',
-          hooks_url: 'string',
-          issue_events_url: 'string',
-          events_url: 'string',
-          assignees_url: 'string',
-          branches_url: 'string',
-          tags_url: 'string',
-          blobs_url: 'string',
-          git_tags_url: 'string',
-          git_refs_url: 'string',
-          trees_url: 'string',
-          statuses_url: 'string',
-          languages_url: 'string',
-          stargazers_url: 'string',
-          contributors_url: 'string',
-          subscribers_url: 'string',
-          subscription_url: 'string',
-          commits_url: 'string',
-          git_commits_url: 'string',
-          comments_url: 'string',
-          issue_comment_url: 'string',
-          contents_url: 'string',
-          compare_url: 'string',
-          merges_url: 'string',
-          archive_url: 'string',
-          downloads_url: 'string',
-          issues_url: 'string',
-          pulls_url: 'string',
-          milestones_url: 'string',
-          notifications_url: 'string',
-          labels_url: 'string',
-          releases_url: 'string',
-          deployments_url: 'string',
-          created_at: 'string',
-          updated_at: 'string',
-          pushed_at: 'string',
-          git_url: 'string',
-          ssh_url: 'string',
-          clone_url: 'string',
-          svn_url: 'string',
-          homepage: null,
-          size: 0,
-          stargazers_count: 0,
-          watchers_count: 0,
-          language: 'string',
-          has_issues: true,
-          has_projects: true,
-          has_downloads: true,
-          has_wiki: true,
-          has_pages: false,
-          forks_count: 0,
-          mirror_url: null,
-          archived: false,
-          disabled: false,
-          open_issues_count: 0,
-          license: null,
-          forks: 0,
-          open_issues: 0,
-          watchers: 0,
-          default_branch: 'string'
+          assignee: {
+            id: 1,
+            login: 'string',
+            type: 'User',
+            avatar_url: 'string',
+            href: 'string'
+          },
+          assignees: [
+            {
+              id: 1,
+              login: 'string',
+              type: 'User',
+              avatar_url: 'string',
+              href: 'string'
+            }
+          ]
         }
       },
       base: {
@@ -246,156 +95,49 @@ export const gitHubMockBuilder = (): GitHubJSONDSL => {
         ref: 'string',
         sha: 'string',
         user: {
+          id: 1,
           login: 'string',
-          id: 0,
-          node_id: 'string',
+          type: 'User',
           avatar_url: 'string',
-          gravatar_id: 'string',
-          url: 'string',
-          html_url: 'string',
-          followers_url: 'string',
-          following_url: 'string',
-          gists_url: 'string',
-          starred_url: 'string',
-          subscriptions_url: 'string',
-          organizations_url: 'string',
-          repos_url: 'string',
-          events_url: 'string',
-          received_events_url: 'string',
-          type: 'string',
-          site_admin: false
+          href: 'string'
         },
         repo: {
           id: 0,
-          node_id: 'string',
           name: 'string',
           full_name: 'string',
           private: true,
           owner: {
+            id: 1,
             login: 'string',
-            id: 0,
-            node_id: 'string',
+            type: 'User',
             avatar_url: 'string',
-            gravatar_id: 'string',
-            url: 'string',
-            html_url: 'string',
-            followers_url: 'string',
-            following_url: 'string',
-            gists_url: 'string',
-            starred_url: 'string',
-            subscriptions_url: 'string',
-            organizations_url: 'string',
-            repos_url: 'string',
-            events_url: 'string',
-            received_events_url: 'string',
-            type: 'string',
-            site_admin: false
+            href: 'string'
           },
           html_url: 'string',
-          description: null,
+          description: '',
           fork: false,
-          url: 'string',
-          forks_url: 'string',
-          keys_url: 'string',
-          collaborators_url: 'string',
-          teams_url: 'string',
-          hooks_url: 'string',
-          issue_events_url: 'string',
-          events_url: 'string',
-          assignees_url: 'string',
-          branches_url: 'string',
-          tags_url: 'string',
-          blobs_url: 'string',
-          git_tags_url: 'string',
-          git_refs_url: 'string',
-          trees_url: 'string',
-          statuses_url: 'string',
-          languages_url: 'string',
-          stargazers_url: 'string',
-          contributors_url: 'string',
-          subscribers_url: 'string',
-          subscription_url: 'string',
-          commits_url: 'string',
-          git_commits_url: 'string',
-          comments_url: 'string',
-          issue_comment_url: 'string',
-          contents_url: 'string',
-          compare_url: 'string',
-          merges_url: 'string',
-          archive_url: 'string',
-          downloads_url: 'string',
-          issues_url: 'string',
-          pulls_url: 'string',
-          milestones_url: 'string',
-          notifications_url: 'string',
-          labels_url: 'string',
-          releases_url: 'string',
-          deployments_url: 'string',
-          created_at: 'string',
-          updated_at: 'string',
-          pushed_at: 'string',
-          git_url: 'string',
-          ssh_url: 'string',
-          clone_url: 'string',
-          svn_url: 'string',
-          homepage: null,
-          size: 0,
-          stargazers_count: 0,
-          watchers_count: 0,
-          language: 'string',
-          has_issues: true,
-          has_projects: true,
-          has_downloads: true,
-          has_wiki: true,
-          has_pages: false,
-          forks_count: 0,
-          mirror_url: null,
-          archived: false,
-          disabled: false,
-          open_issues_count: 0,
-          license: null,
-          forks: 0,
-          open_issues: 0,
-          watchers: 0,
-          default_branch: 'string'
+          assignee: {
+            id: 1,
+            login: 'string',
+            type: 'User',
+            avatar_url: 'string',
+            href: 'string'
+          },
+          assignees: [
+            {
+              id: 1,
+              login: 'string',
+              type: 'User',
+              avatar_url: 'string',
+              href: 'string'
+            }
+          ]
         }
       },
-      _links: {
-        self: {
-          href: 'string'
-        },
-        html: {
-          href: 'string'
-        },
-        issue: {
-          href: 'string'
-        },
-        comments: {
-          href: 'string'
-        },
-        review_comments: {
-          href: 'string'
-        },
-        review_comment: {
-          href: 'string'
-        },
-        commits: {
-          href: 'string'
-        },
-        statuses: {
-          href: 'string'
-        }
-      },
-      author_association: 'string',
-      active_lock_reason: null,
+      author_association: 'COLLABORATOR',
       merged: false,
-      mergeable: true,
-      rebaseable: true,
-      mergeable_state: 'string',
-      merged_by: null,
       comments: 0,
       review_comments: 0,
-      maintainer_can_modify: false,
       commits: 0,
       additions: 0,
       deletions: 0,
@@ -404,7 +146,6 @@ export const gitHubMockBuilder = (): GitHubJSONDSL => {
     commits: [
       {
         sha: 'string',
-        node_id: 'string',
         commit: {
           author: {
             name: 'string',
@@ -422,56 +163,22 @@ export const gitHubMockBuilder = (): GitHubJSONDSL => {
             url: 'string'
           },
           url: 'string',
-          comment_count: 0,
-          verification: {
-            verified: false,
-            reason: 'string',
-            signature: null,
-            payload: null
-          }
+          sha: ''
         },
         url: 'string',
-        html_url: 'string',
-        comments_url: 'string',
         author: {
+          id: 1,
           login: 'string',
-          id: 0,
-          node_id: 'string',
+          type: 'User',
           avatar_url: 'string',
-          gravatar_id: 'string',
-          url: 'string',
-          html_url: 'string',
-          followers_url: 'string',
-          following_url: 'string',
-          gists_url: 'string',
-          starred_url: 'string',
-          subscriptions_url: 'string',
-          organizations_url: 'string',
-          repos_url: 'string',
-          events_url: 'string',
-          received_events_url: 'string',
-          type: 'string',
-          site_admin: false
+          href: 'string'
         },
         committer: {
+          id: 1,
           login: 'string',
-          id: 0,
-          node_id: 'string',
+          type: 'User',
           avatar_url: 'string',
-          gravatar_id: 'string',
-          url: 'string',
-          html_url: 'string',
-          followers_url: 'string',
-          following_url: 'string',
-          gists_url: 'string',
-          starred_url: 'string',
-          subscriptions_url: 'string',
-          organizations_url: 'string',
-          repos_url: 'string',
-          events_url: 'string',
-          received_events_url: 'string',
-          type: 'string',
-          site_admin: false
+          href: 'string'
         },
         parents: [
           {
@@ -483,49 +190,29 @@ export const gitHubMockBuilder = (): GitHubJSONDSL => {
       }
     ],
     reviews: [
-      'string'
+      {
+        user: {
+          id: 1,
+          login: 'string',
+          type: 'User',
+          avatar_url: 'string',
+          href: 'string'
+        },
+        body: 'string',
+        commit_id: 'string',
+        state: 'PENDING'
+      }
     ],
     requested_reviewers: {
-      users: [
-        'string'
-      ],
+      users: requestedReviewers,
       teams: [
         'string'
       ]
     },
     thisPR: {
-      0: 0,
+      number: 0,
       repo: 'string',
       owner: 'string'
-    },
-    api: {
-      log: {},
-      actions: {},
-      activity: {},
-      apps: {},
-      checks: {},
-      codesOfConduct: {},
-      emojis: {},
-      gists: {},
-      git: {},
-      gitignore: {},
-      interactions: {},
-      issues: {},
-      licenses: {},
-      markdown: {},
-      meta: {},
-      migrations: {},
-      oauthAuthorizations: {},
-      orgs: {},
-      projects: {},
-      pulls: {},
-      rateLimit: {},
-      reactions: {},
-      repos: {},
-      search: {},
-      teams: {},
-      users: {}
-    },
-    utils: {}
+    }
   }
 }

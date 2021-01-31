@@ -1,10 +1,8 @@
-export const gitMockBuilder = () => {
+export const gitMockBuilder = (modifiedFiles:string[] = [], createdFiles:string[] = [], deletedFiles:string[] = []) => {
   return {
-    base: 'string',
-    head: 'string',
-    modified_files: ['string'],
-    created_files: ['string'],
-    deleted_files: ['string'],
+    modified_files: modifiedFiles,
+    created_files: createdFiles,
+    deleted_files: deletedFiles,
     commits: [
       {
         sha: 'string',
