@@ -2502,6 +2502,15 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
+danger-plugin-fixme@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/danger-plugin-fixme/-/danger-plugin-fixme-1.0.0.tgz#3e53ffb0f36a34d7e50da5b57be8a558e77c1f4a"
+  integrity sha1-PlP/sPNqNNflDaW1e+ilWOd8H0o=
+  dependencies:
+    lodash "^4.17.4"
+  optionalDependencies:
+    esdoc "^0.5.2"
+
 danger-plugin-no-console@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/danger-plugin-no-console/-/danger-plugin-no-console-1.1.2.tgz#6f5cd7797a5fc58859f5c5bed001b5db3d2a183b"
