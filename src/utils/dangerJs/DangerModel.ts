@@ -1,9 +1,25 @@
-import { GitHubDSL, GitJSONDSL } from 'danger'
+import {
+  BitBucketCloudDSL,
+  BitBucketServerDSL,
+  GitHubJSONDSL,
+  DangerDSLType,
+  DangerUtilsDSL,
+  GitDSL,
+  GitHubDSL,
+  GitLabDSL
+} from 'danger'
+
 export type LogFunction = (message:string) => void
-export type DangerObjectModel = { git?: Partial<GitJSONDSL>, github?: Partial<GitHubDSL>}
-export interface DangerModel {
-  danger: DangerObjectModel
-  fail: LogFunction
-  message: LogFunction
-  warn: LogFunction
+export interface DangerMock {
+  git?: Partial<GitDSL>
+  github?: Partial<GitHubDSL>
+  'bitbucket_server'?: Partial<BitBucketServerDSL>
+  'bitbucket_cloud'?: Partial<BitBucketCloudDSL>
+  gitlab?: Partial<GitLabDSL>
+  utils?: Partial<DangerUtilsDSL>
+  message?: LogFunction
+  fail?: LogFunction
+  warn?: LogFunction
 }
+export type DangerModel = DangerDSLType | DangerMock
+export type GitHubJSON = GitHubJSONDSL
