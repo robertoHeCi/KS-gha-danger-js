@@ -18,10 +18,7 @@ describe('Danger JS tests', () => {
   })
 
   afterEach(() => {
-    global.warn = undefined
-    global.message = undefined
-    global.fail = undefined
-    // global.markdown = undefined
+    jest.clearAllMocks()
   })
 
   it('fails if there are more changed files than 1', () => {
