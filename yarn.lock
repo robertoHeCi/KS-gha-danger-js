@@ -2502,10 +2502,26 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
+danger-plugin-fixme@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/danger-plugin-fixme/-/danger-plugin-fixme-1.0.0.tgz#3e53ffb0f36a34d7e50da5b57be8a558e77c1f4a"
+  integrity sha1-PlP/sPNqNNflDaW1e+ilWOd8H0o=
+  dependencies:
+    lodash "^4.17.4"
+  optionalDependencies:
+    esdoc "^0.5.2"
+
 danger-plugin-no-console@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/danger-plugin-no-console/-/danger-plugin-no-console-1.1.2.tgz#6f5cd7797a5fc58859f5c5bed001b5db3d2a183b"
   integrity sha512-xgzxfxJFsMKwA+pmHvKUgQmfgqMt5rTWkTnzPj9s8X+CungitCnfP3LEYb9m0kymnFLoexW0HHOuyZbq2Kdk8g==
+  optionalDependencies:
+    esdoc "^0.5.2"
+
+danger-plugin-wrapper-ts@^0.0.0-development:
+  version "0.0.0-development"
+  resolved "https://registry.yarnpkg.com/danger-plugin-wrapper-ts/-/danger-plugin-wrapper-ts-0.0.0-development.tgz#5e0d508587b9ca315f98b5ab37cb66a2bdfd7751"
+  integrity sha512-zeouNmJVyGQ1BH6/tLii0zKvYb0mAITiC1DS/YKEl1iU8hlVzO8ZZ76oGtVnzjehfoSprX5TFaeUCekaUpLsHg==
   optionalDependencies:
     esdoc "^0.5.2"
 
