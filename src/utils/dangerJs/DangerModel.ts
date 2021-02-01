@@ -7,18 +7,8 @@ import {
   GitLabDSL
 } from 'danger'
 
-export type LogFunction = (message:string) => void
-export interface DangerMock {
-  git?: Partial<GitDSL>
-  github?: Partial<GitHubDSL>
-  'bitbucket_server'?: Partial<BitBucketServerDSL>
-  'bitbucket_cloud'?: Partial<BitBucketCloudDSL>
-  gitlab?: Partial<GitLabDSL>
-  utils?: Partial<DangerUtilsDSL>
-  message?: LogFunction
-  fail?: LogFunction
-  warn?: LogFunction
-}
+export type LogFunction = ((message:string) => void) | undefined
+
 export interface DangerModel {
   danger:{
     git?: Partial<GitDSL>
