@@ -1,4 +1,3 @@
-import * as danger from 'danger'
 import {
   checkChangedFiles,
   checkNewDependencies,
@@ -6,79 +5,78 @@ import {
   checkTicketLinkInPrBoby
 } from './index'
 
-import { DangerModel } from './DangerModel'
 import { gitHubMockBuilder, gitMockBuilder } from './mocks'
+import { DangerModel } from './DangerModel'
 
-jest.mock('danger', () => jest.fn())
-const dangerMock: DangerModel = danger
+declare const global: DangerModel
 
 describe('Danger JS tests', () => {
   beforeEach(() => {
-    dangerMock.fail = jest.fn()
-    dangerMock.warn = jest.fn()
-    dangerMock.message = jest.fn()
-    dangerMock.danger = jest.fn() as any
+    global.warn = jest.fn()
+    global.message = jest.fn()
+    global.fail = jest.fn()
+  })
+
+  afterEach(() => {
+    global.warn = undefined
+    global.message = undefined
+    global.fail = undefined
+    // global.markdown = undefined
   })
 
   it('fails if there are more changed files than 1', () => {
-    dangerMock.danger.git = gitMockBuilder(['example.ts'], ['example.ts'], ['example.ts'])
-    return checkChangedFiles(dangerMock, 1).then(() => {
-      expect(dangerMock.warn).toHaveBeenCalled()
-    })
+    global.danger = { git: gitMockBuilder(['example.ts'], ['example.ts'], ['example.ts']) }
+    checkChangedFiles(1)
+    expect(global.warn).toHaveBeenCalled()
   })
 
   it('Should not fails if there are less changed files than 4', () => {
-    dangerMock.danger.git = gitMockBuilder(['example.ts'], ['example.ts'], ['example.ts'])
-    return checkChangedFiles(dangerMock, 4).then(() => {
-      expect(dangerMock.warn).not.toHaveBeenCalled()
-    })
+    global.danger = { git: gitMockBuilder(['example.ts'], ['example.ts'], ['example.ts']) }
+    checkChangedFiles(3)
+    expect(global.warn).not.toHaveBeenCalled()
   })
 
   it('fails if there are no asignees on the PR', () => {
-    dangerMock.danger.github = gitHubMockBuilder()
-    return checkPRReviewers(dangerMock).then(() => {
-      expect(dangerMock.fail).toHaveBeenCalled()
-    })
+    global.danger = { github: gitHubMockBuilder() }
+    checkPRReviewers()
+    expect(global.fail).toHaveBeenCalled()
   })
 
   it('Fail fx should not been called because there are reviewers on PR', () => {
-    dangerMock.danger.github = gitHubMockBuilder('', [{
-      id: 1,
-      login: 'string',
-      type: 'User',
-      avatar_url: 'string',
-      href: 'string'
-    }])
-    return checkPRReviewers(dangerMock).then(() => {
-      expect(dangerMock.fail).not.toHaveBeenCalled()
-    })
+    global.danger = {
+      github: gitHubMockBuilder('', [{
+        id: 1,
+        login: 'string',
+        type: 'User',
+        avatar_url: 'string',
+        href: 'string'
+      }])
+    }
+    checkPRReviewers()
+    expect(global.fail).not.toHaveBeenCalled()
   })
 
   it('Should return a fail because the PR body does not contains the issue link', () => {
-    dangerMock.danger.github = gitHubMockBuilder('')
-    return checkTicketLinkInPrBoby(dangerMock).then(() => {
-      expect(dangerMock.fail).toHaveBeenCalled()
-    })
+    global.danger = { github: gitHubMockBuilder('') }
+    checkTicketLinkInPrBoby()
+    expect(global.fail).toHaveBeenCalled()
   })
 
   it('Should not fail because the PR body contains the issue link', () => {
-    dangerMock.danger.github = gitHubMockBuilder('[AB#12234]()')
+    global.danger = { github: gitHubMockBuilder('[AB#12234]()') }
 
-    return checkTicketLinkInPrBoby(dangerMock).then(() => {
-      expect(dangerMock.fail).not.toHaveBeenCalled()
-    })
+    checkTicketLinkInPrBoby()
+    expect(global.fail).not.toHaveBeenCalled()
   })
 
   it('Should execute the log function if modified files contains package.json', () => {
-    dangerMock.danger.git = gitMockBuilder(['package.json'])
-    return checkNewDependencies(dangerMock).then(() => {
-      expect(dangerMock.warn).toHaveBeenCalled()
-    })
+    global.danger = { git: gitMockBuilder(['package.json']) }
+    checkNewDependencies()
+    expect(global.warn).toHaveBeenCalled()
   })
   it('Should  not execute the log function if modified files not contains package.json', () => {
-    dangerMock.danger.git = gitMockBuilder(['index.ts'])
-    return checkNewDependencies(dangerMock).then(() => {
-      expect(dangerMock.warn).not.toHaveBeenCalled()
-    })
+    global.danger = { git: gitMockBuilder(['index.ts']) }
+    checkNewDependencies()
+    expect(global.warn).not.toHaveBeenCalled()
   })
 })
