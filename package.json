@@ -25,7 +25,7 @@
     "danger": "^10.6.0",
     "danger-plugin-fixme": "^1.0.0",
     "danger-plugin-no-console": "^1.1.2",
-    "danger-plugin-wrapper-ts": "0.0.9-development",
+    "danger-plugin-wrapper-ts": "^1.0.0-development",
     "eslint": "^7.15.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
