@@ -1,2 +1,2 @@
-import wrapperTs from 'danger-plugin-wrapper-ts'
-wrapperTs()
+import wrapper from 'danger-plugin-wrapper-ts'
+wrapper()
