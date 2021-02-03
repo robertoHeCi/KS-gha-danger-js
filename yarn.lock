@@ -2518,6 +2518,13 @@ danger-plugin-no-console@^1.1.2:
   optionalDependencies:
     esdoc "^0.5.2"
 
+danger-plugin-wrapper-ts@0.0.4-development:
+  version "0.0.4-development"
+  resolved "https://registry.yarnpkg.com/danger-plugin-wrapper-ts/-/danger-plugin-wrapper-ts-0.0.4-development.tgz#5ed8c53e6f30d0d844d8bb899f4bc57f8ef6ba6f"
+  integrity sha512-/DmpHFVb2lh9Qw8DPIpso9JCfZRLlJb1WxutXU8Mh2RcHHKHKJTO1caCqLDVD6ZscrCRZ1X04j81LDg8dQ3lNw==
+  optionalDependencies:
+    esdoc "^0.5.2"
+
 danger@^10.6.0:
   version "10.6.0"
   resolved "https://registry.yarnpkg.com/danger/-/danger-10.6.0.tgz#6fcb10753143aeb60c139065b952dbe783e8ed14"
