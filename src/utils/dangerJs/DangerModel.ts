@@ -7,7 +7,7 @@ import {
   GitLabDSL
 } from 'danger'
 
-export type LogFunction = ((message:string) => void) | undefined
+export type LogFunction = (message:string) => void
 
 export interface DangerModel {
   danger:{
