@@ -7,7 +7,7 @@ export declare const warn: LogFunction
 export declare const fail: LogFunction
 
 export const checkPRReviewers = function () {
-  if (danger.github.requested_reviewers?.users.length === 0) {
+  if (danger.github.requested_reviewers.users.length === 0) {
     fail('PR must have at least 1 reviewer!!')
   }
 }
