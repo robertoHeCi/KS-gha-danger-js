@@ -1,10 +1,9 @@
 import { DangerDSLType } from 'danger/distribution/dsl/DangerDSL'
-import { LogFunction } from './DangerModel'
 
 declare let danger: DangerDSLType
-export declare const message: LogFunction
-export declare const warn: LogFunction
-export declare const fail: LogFunction
+export declare function message(message: string): void
+export declare function warn(message: string): void
+export declare function fail(message: string): void
 
 export const checkPRReviewers = function () {
   if (danger.github.requested_reviewers.users.length === 0) {
