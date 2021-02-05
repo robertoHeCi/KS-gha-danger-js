@@ -46,3 +46,10 @@ export const checkUpdatedTests = (testFilePattern = 'test') => {
     warn(`There are no changes in test files. Pattern used: ${testFilePattern}`)
   }
 }
+
+export default function () {
+  checkPRReviewers()
+  checkNewDependencies()
+  checkChangedFiles(1)
+  checkTicketLinkInPrBoby()
+}
