@@ -2509,6 +2509,13 @@ danger-plugin-no-console@^1.1.2:
   optionalDependencies:
     esdoc "^0.5.2"
 
+danger-plugin-wrapper-ts@0.0.3-development:
+  version "0.0.3-development"
+  resolved "https://registry.yarnpkg.com/danger-plugin-wrapper-ts/-/danger-plugin-wrapper-ts-0.0.3-development.tgz#1246c09647a052a4648161db62390bdccc238986"
+  integrity sha512-IbWnCA0FJ7fJsJpJkxohkXlAH0Pd6JQYTabrHwi1TIqUjLcqFf4V1w5ijF210IIhwFBVeBBp3uq3gj+nw31x8g==
+  optionalDependencies:
+    esdoc "^0.5.2"
+
 danger@^10.6.0:
   version "10.6.0"
   resolved "https://registry.yarnpkg.com/danger/-/danger-10.6.0.tgz#6fcb10753143aeb60c139065b952dbe783e8ed14"
@@ -2550,6 +2557,13 @@ danger@^10.6.0:
     readline-sync "^1.4.9"
     require-from-string "^2.0.2"
     supports-hyperlinks "^1.0.1"
+
+dangerjs-wrapper@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/dangerjs-wrapper/-/dangerjs-wrapper-1.0.9.tgz#4c25b5df83004d646768aa8fdbf999213252a11b"
+  integrity sha512-RPQsgcmNhq+ryde4FMFfjLIGvFMmRv+Sbmz2PSMCls066HwkNE0MS3LIs0M/jYvrwtKLN5BJazdA96osFwnmMg==
+  optionalDependencies:
+    esdoc "^0.5.2"
 
 dashdash@^1.12.0:
   version "1.14.1"
